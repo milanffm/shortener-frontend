@@ -2,7 +2,7 @@ export default {
   target: 'static',
 
   head: {
-    title: 'chaos-ad-frontend',
+    title: 'shortener',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
