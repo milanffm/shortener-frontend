@@ -40,7 +40,9 @@ export default {
     '@nuxtjs/pwa'
   ],
 
-  axios: {},
+  axios: {
+    baseURL: 'http://localhost:3333' // Used as fallback if no runtime config is provided
+  },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {

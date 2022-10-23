@@ -3,6 +3,7 @@
     <section class="homepage__mainContent">
       <h1>URL Shortener</h1>
       <input v-model="url" class="homepage__input">
+      {{ url.length }}
       <button
         :disabled="url.length < 11"
         class="homepage__button"
@@ -12,9 +13,12 @@
       </button>
       <div v-if="shortUrl.length > 0" class="homepage__shortUrl">
         <h2>Kurze Url</h2>
-        <p>hier ist die kurze Url:</p>
         <p class="homepage__url">
           {{ shortUrl }}
+        </p>
+        <h3>Ursprüngliche URL</h3>
+        <p class="homepage__url">
+          {{ orginalUrl }}
         </p>
       </div>
     </section>
@@ -29,9 +33,18 @@ import { Vue, Component } from 'vue-property-decorator'
 })
 export default class Index extends Vue {
   url = ''
-  shortUrl = 'sfsfsd'
-  sendUrl () {
-    if (this.url) { console.log(this.url) }
+  shortUrl = ''
+  orginalUrl = ''
+  async sendUrl () {
+    console.log('SEND ======>')
+    if (this.url) {
+      const body = { origUrl: this.url }
+      const response = await this.$axios.post('/api/short', body)
+      console.log(response)
+      this.shortUrl = response?.data?.shortUrl
+      this.orginalUrl = response.data?.origUrl
+    }
+
     this.url = ''
   }
 }
