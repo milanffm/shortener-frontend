@@ -1,0 +1,106 @@
+// hamburger button animation  =============================
+
+@mixin hamburger {
+	width: 43px;
+	height: 43px;
+	@include position(fixed, $small-margin $small-margin null null);
+	margin: 0;
+	transform: rotate(0deg);
+	@include new-transition();
+	cursor: pointer;
+	z-index: 1003;
+
+	span {
+		display: block;
+		position: absolute;
+		height: 6px;
+		width: 50%;
+		background: $black;
+		opacity: 1;
+		transform: rotate(0deg);
+		@include new-transition(.25s ease-in-out);
+
+		&:nth-child(odd) {
+			border-radius: 5px 0 0 5px;
+		}
+
+		&:nth-child(even) {
+			border-radius: 0 5px 5px 0;
+		}
+
+		box-shadow: 1px 1px 1px 0 rgba(255, 255, 255, 1);
+
+		&:nth-child(even) {
+			left: 50%;
+		}
+
+		&:nth-child(odd) {
+			left: 0;
+		}
+
+		&:nth-child(1), &:nth-child(2) {
+			top: 0;
+		}
+
+		&:nth-child(3), &:nth-child(4) {
+			top: 12px;
+		}
+
+		&:nth-child(5), &:nth-child(6) {
+			top: 24px;
+		}
+	}
+
+	&.active {
+
+		span {
+
+			box-shadow: none;
+
+			&:nth-child(1), &:nth-child(6) {
+				-webkit-transform: rotate(45deg);
+				-moz-transform: rotate(45deg);
+				-o-transform: rotate(45deg);
+				transform: rotate(45deg);
+			}
+
+			&:nth-child(2), &:nth-child(5) {
+				-webkit-transform: rotate(-45deg);
+				-moz-transform: rotate(-45deg);
+				-o-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+			}
+
+			&:nth-child(1) {
+				left: 5px;
+				top: 7px;
+			}
+
+			&:nth-child(2) {
+				left: calc(50% - 5px);
+				top: 7px;
+			}
+
+			&:nth-child(3) {
+				left: -50%;
+				opacity: 0;
+			}
+
+			&:nth-child(4) {
+				left: 100%;
+				opacity: 0;
+			}
+
+			&:nth-child(5) {
+				left: 5px;
+				top: 20px;
+			}
+
+			&:nth-child(6) {
+				left: calc(50% - 5px);
+				top: 20px;
+			}
+
+		}
+	}
+}

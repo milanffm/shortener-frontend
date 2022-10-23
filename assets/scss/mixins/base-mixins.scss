@@ -1,0 +1,31 @@
+
+@mixin new-transition($transitionvalues: $base-transition) {
+	@include prefixer(transition, $transitionvalues, webkit moz spec);
+}
+
+@mixin hyphens(){
+	-ms-word-break: break-all;
+	word-break: break-all;
+
+	/* Non standard for WebKit */
+	word-break: break-word;
+
+	@include prefixer(hyphens, auto, webkit moz ms spec)
+}
+
+@mixin contentContainer($margin: $medium-margin) {
+	max-width: $medium-screen;
+	margin: 0 auto;
+	@include padding(null $margin);
+	@media all and (max-width: $x-small-screen) {
+		@include padding(null $small-margin);
+	}
+
+}
+
+@mixin smallLine() {
+	@include margin(null auto $big-margin);
+
+	border-top: solid $brand-primary 4px;
+	width: 40px;
+}

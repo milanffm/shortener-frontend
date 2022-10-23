@@ -1,0 +1,90 @@
+/*
+ * Application global variables.
+*/
+
+$gray-dark: #3c3c3c;
+$gray: #555;
+$gray-light: #999;
+$gray-lighter: #eceeef;
+$gray-lightest: #f7f7f9;
+$white: #fff;
+$black: #1d1d1b;
+
+$brand-primary: $black;
+$brand-second: #cbbba0;
+$brand-info: $brand-second;
+$brand-warning: $brand-second;
+$brand-danger: #d9534f;
+$brand-inverse: $gray-dark;
+
+$link-color: $brand-info;
+$navi-color: $black;
+$navi-hover-color: $link-color;
+
+/**
+* DIMENSIONS
+ */
+$large-screen: 1400px;
+$medium-screen: 1040px;
+$small-screen: 810px;
+$x-small-screen: 624px;
+
+$big-margin: 60px;
+$medium-margin: 45px;
+$small-margin: 30px;
+$x-small-margin: 15px;
+
+$headline-height: 60px;
+
+$navi-width: 300px;
+
+$modal-content-max-width: 1030px;
+
+$carousel-height: 600px;
+
+/**
+* FONTSIZES
+ */
+
+$base-font-size: 1.4rem;
+$small-font-size: 0.9rem;
+$x-small-font-size: 0.7rem;
+$big-font-size: 1.8rem;
+$headline-font-size: 1.6rem;
+
+
+/**
+* LINKS
+ */
+
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+
+/**
+* FONTS
+ */
+
+$base-font-family: 'linik-medium', sans-serif;
+$headline-font-family: 'linik-bold', sans-serif;
+
+/**
+* ANIMATIONS
+ */
+
+$base-transition: all .5s ease-out;
+$translate-transition: translate .5s ease-out;
+
+
+/**
+*Icons
+ */
+
+$btn-size: 47px;
+$btn-top-padding: 0;
+$btn-color: $white;
+$icon-big-font-size: 2.6rem;
+$icon-small-font-size: .9rem;
+
+$small-icon-size: 20px;
+
+

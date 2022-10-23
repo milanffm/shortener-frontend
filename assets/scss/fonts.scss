@@ -1,0 +1,27 @@
+@include font-face("linik-bold", "/fonts/linik/LinikSans-Bold.ttf", $file-formats: woff);
+@include font-face("linik-medium", "/fonts/linik/LinikSans-Medium.ttf", $file-formats: woff);
+@include font-face("icomoon", "/fonts/icomoon/icomoon", $file-formats: woff);
+
+body {
+	font-family: $base-font-family;
+	color: $brand-primary;
+	font-weight: 300;
+	letter-spacing: 3px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: $headline-font-family;
+	font-size: $headline-font-size;
+	text-transform: uppercase;
+	margin-top: 0;
+}
+
+p {
+	font-size: $base-font-size;
+	letter-spacing: 2px;
+	margin-top: 0;
+	margin-bottom: 2rem;
+	line-height: 1.3;
+}

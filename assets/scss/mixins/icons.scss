@@ -1,0 +1,51 @@
+@mixin icon( $value, $el:'before') {
+	position: relative;
+	&:before, &:after {
+		font-family: 'icomoon';
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1;
+		display: inline-block;
+		position: absolute;
+		color: $btn-color;
+
+		/* Better Font Rendering =========== */
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+	@if $el == 'before' or $el == 'after' {
+		&:#{$el} {
+
+			@if $value == 'icon-cheveron-down' {
+				content: '\e90a';
+			}
+			@if $value == 'icon-cheveron-left' {
+				content: '\e90b';
+			}
+			@if $value == 'icon-cheveron-right' {
+				content: '\e90c';
+			}
+			@if $value == 'icon-cheveron-up' {
+				content: '\e90d';
+			}
+			@if $value == 'icon-close' {
+				content: '\e90e';
+			}
+			@if $value == 'icon-code' {
+				content: '\e90f';
+			}
+			@if $value == 'icon-download' {
+				content: '\e910';
+			}
+
+		}
+	} @else {
+		@warn '`#{$el}` is not a valid pseudo-element.';
+	}
+
+}
+
+
