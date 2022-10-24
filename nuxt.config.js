@@ -1,3 +1,5 @@
+const apiUrl = process.env.NODE_ENV === 'production' ? 'https://s.wwds.de/' : 'http://localhost:3333/'
+
 export default {
   target: 'static',
 
@@ -41,7 +43,7 @@ export default {
   ],
 
   axios: {
-    baseURL: 'http://localhost:3333' // Used as fallback if no runtime config is provided
+    baseURL: apiUrl // Used as fallback if no runtime config is provided
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
