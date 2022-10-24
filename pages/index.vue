@@ -41,18 +41,15 @@ export default class Index extends Vue {
   errorText = ''
   async sendUrl () {
     this.errorText = ''
-    console.log('SEND ======>')
     if (this.url) {
       const body = { origUrl: this.url }
       try {
         const response = await this.$axios.post('/api/short', body)
-        console.log(response)
         this.shortUrl = response?.data?.shortUrl
         this.orginalUrl = response.data?.origUrl
         this.url = ''
       } catch (error) {
         this.errorText = 'Bitte eine richtige Url eingeben'
-        console.log('error=====>', error)
       }
     }
   }
