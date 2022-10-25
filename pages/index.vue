@@ -42,7 +42,7 @@ export default class Index extends Vue {
   async sendUrl () {
     this.errorText = ''
     if (this.url) {
-      const body = { origUrl: this.url }
+      const body = { origUrl: this.url.trim().toLowerCase() }
       try {
         const response = await this.$axios.post('/api/short', body)
         this.shortUrl = response?.data?.shortUrl
